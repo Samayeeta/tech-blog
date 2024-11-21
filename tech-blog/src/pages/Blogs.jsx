@@ -103,5 +103,4 @@ const Blogs = () => {
     </div>
   );
 };
-
 export default Blogs;
