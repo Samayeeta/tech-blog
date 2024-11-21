@@ -81,58 +81,73 @@ p.subhead {
   font-size: 24px;
   color: #cccccc;
 }
-
-/* Form Pages */
+/* Form Container */
 .form-container {
-  max-width: 500px;
+  max-width: 800px; /* Increased width for a larger feel */
   margin: 50px auto;
-  padding: 20px;
-  background-color: #252d4a; /* Form Background */
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  padding: 40px; /* Added more padding for space */
+  background: linear-gradient(145deg, #2e375a, #1f2745); /* Subtle gradient background */
+  border-radius: 12px;
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.5); /* Enhanced shadow for depth */
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif; /* Clean, modern font */
 }
 
-.form-container h1 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
+/* Form Inputs and Textareas */
 .form-container input,
-.form-container textarea,
+.form-container textarea {
+  width: 100%;
+  padding: 20px; /* Increased padding for comfort */
+  margin-bottom: 20px; /* Spacing between elements */
+  border: none;
+  border-radius: 8px;
+  font-size: 18px; /* Larger text for readability */
+  background-color: #1d2549; /* Darker input background */
+  color: #ffffff;
+  box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.3); /* Subtle inset shadow */
+  resize: none; /* Prevent horizontal resizing of textareas */
+}
+
+/* Larger Textarea for Blog Content */
+.form-container textarea[name="content"] {
+  height: 300px; /* Significantly larger for blog writing */
+  font-size: 18px; /* Bigger font size for ease of writing */
+}
+
+/* Form Button */
 .form-container button {
   width: 100%;
-  padding: 12px 15px;
-  margin-bottom: 15px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-.form-container input[name="title"] {
-  height: 50px; /* Increases the height for the title input */
-  font-size: 18px; /* Makes the text larger */
-}
-
-.form-container textarea[name="content"] {
-  height: 150px; /* Increases the height for the content textarea */
-  font-size: 16px; /* Adjust font size for content */
-  resize: vertical; /* Allows resizing vertically */
-}
-
-
-.form-container button {
+  padding: 15px;
   background-color: #00c4ff;
   color: #ffffff;
   font-weight: bold;
+  font-size: 18px; /* Larger button text */
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .form-container button:hover {
   background-color: #0090cc;
+  transform: scale(1.05); /* Slight scaling effect on hover */
 }
 
-/* Center Alignment for Submit Blog and Other Pages */
+/* Headline Styling */
+.form-container h1 {
+  text-align: center;
+  font-size: 32px; /* Bigger heading */
+  margin-bottom: 30px; /* Space below heading */
+  color: #e0e0e0;
+}
+
+/* Spacing for Tags and File Input */
+.form-container input[name="tags"],
+.form-container input[type="file"] {
+  margin-bottom: 25px;
+}
+
 .page-container {
   display: flex;
   flex-direction: column;
@@ -141,7 +156,22 @@ p.subhead {
   min-height: 100vh;
   text-align: center;
   padding: 20px;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+              url('tech-blog\public\assets\home_page.jpg'); /* Overlay with the background image */
+  background-size: cover; /* Ensures the image covers the entire container */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents tiling */
+  font-family: 'Roboto', sans-serif; /* Clean font choice */
+  color: #ffffff; /* Text color adjusted for better contrast */
 }
+
+/* Add Placeholder Styling */
+.form-container input::placeholder,
+.form-container textarea::placeholder {
+  color: #7a869f; /* Muted color for placeholders */
+  font-style: italic;
+}
+
 /* Animations */
 @keyframes fadeIn {
   0% {
