@@ -1,98 +1,90 @@
-import React, { useState } from "react";
-import Layout from "../components/Layout";
+import React, { useState } from 'react';
 
 const SubmitBlog = () => {
-  const [form, setForm] = useState({
-    title: "",
-    content: "",
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    title: '',
+    difficulty: '',
+    content: '',
+    tags: '',
     file: null,
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
-  };
-
-  const handleFileChange = (e) => {
-    setForm({ ...form, file: e.target.files[0] });
+    const { name, value, files } = e.target;
+    setFormData({
+      ...formData,
+      [name]: files ? files[0] : value,
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Blog Submitted:", form);
+    // Handle form submission logic
   };
 
   return (
-    <Layout>
-      <h1 style={{ fontSize: "28px", marginBottom: "20px" }}>Submit a Blog</h1>
-      <form
-        onSubmit={handleSubmit}
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          width: "100%",
-          maxWidth: "500px",
-        }}
-      >
-        <input
-          type="text"
-          name="title"
-          placeholder="Blog Title"
-          value={form.title}
-          onChange={handleChange}
-          required
-          style={{
-            margin: "10px",
-            padding: "10px",
-            width: "100%",
-            border: "1px solid #ccc",
-            borderRadius: "5px",
-          }}
-        />
-        <textarea
-          name="content"
-          placeholder="Blog Content"
-          value={form.content}
-          onChange={handleChange}
-          required
-          style={{
-            margin: "10px",
-            padding: "10px",
-            width: "100%",
-            height: "150px",
-            border: "1px solid #ccc",
-            borderRadius: "5px",
-          }}
-        />
-        <input
-          type="file"
-          onChange={handleFileChange}
-          required
-          style={{
-            margin: "10px",
-            padding: "10px",
-            width: "100%",
-            border: "1px solid #ccc",
-            borderRadius: "5px",
-          }}
-        />
-        <button
-          type="submit"
-          style={{
-            padding: "10px 20px",
-            backgroundColor: "#033860",
-            color: "white",
-            border: "none",
-            borderRadius: "5px",
-            cursor: "pointer",
-            marginTop: "10px",
-          }}
-        >
-          Submit
-        </button>
-      </form>
-    </Layout>
+    <div className="page-container">
+      <div className="form-container">
+        <h1>Submit a Blog</h1>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="firstName"
+            placeholder="First Name"
+            value={formData.firstName}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="text"
+            name="lastName"
+            placeholder="Last Name"
+            value={formData.lastName}
+            onChange={handleChange}
+          />
+          <input
+            type="file"
+            name="file"
+            accept=".doc,.docx,.pdf"
+            onChange={handleChange}
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="text"
+            name="title"
+            placeholder="Blog Title"
+            value={formData.title}
+            onChange={handleChange}
+            required
+          />
+          <textarea
+            name="content"
+            placeholder="Blog Content"
+            value={formData.content}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="text"
+            name="tags"
+            placeholder="Tags (comma-separated)"
+            value={formData.tags}
+            onChange={handleChange}
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
   );
 };
 

@@ -1,54 +1,49 @@
-import React, { useState } from "react";
-import Layout from "../components/Layout";
+import React, { useState } from 'react';
 
 const Login = () => {
-  const [form, setForm] = useState({ email: "", password: "" });
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  });
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Login Form Submitted:", form);
+    // Handle login logic
   };
 
   return (
-    <Layout>
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={form.email}
-          onChange={handleChange}
-          required
-          style={{ margin: "10px", padding: "10px", width: "300px" }}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={form.password}
-          onChange={handleChange}
-          required
-          style={{ margin: "10px", padding: "10px", width: "300px" }}
-        />
-        <button
-          type="submit"
-          style={{
-            padding: "10px 20px",
-            backgroundColor: "#033860",
-            color: "white",
-            border: "none",
-            cursor: "pointer",
-          }}
-        >
-          Login
-        </button>
-      </form>
-    </Layout>
+    <div className="page-container">
+      <div className="form-container">
+        <h1>Login</h1>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+          <button type="submit">Login</button>
+        </form>
+        <div className="login-links">
+          <a href="/signup">New User? Sign Up</a> | <a href="/admin">Admin Login</a>
+        </div>
+      </div>
+    </div>
   );
 };
 

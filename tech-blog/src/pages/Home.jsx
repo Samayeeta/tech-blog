@@ -1,12 +1,13 @@
 import React from "react";
-import Layout from "../components/Layout";
 
 const Home = () => {
   return (
-    <Layout>
-      <h1>Welcome to the Tech Blog</h1>
-      <p>Explore the latest blogs, share your ideas, and connect with tech enthusiasts!</p>
-    </Layout>
+    <div className="home-container">
+      <div className="home-content">
+        <h1 className="headline typewriter">TechBlogs</h1>
+        <p className="subhead slide-up">Your daily dose of tech insights and programming tips.</p>
+      </div>
+    </div>
   );
 };
 

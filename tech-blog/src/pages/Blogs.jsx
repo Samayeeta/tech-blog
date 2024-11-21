@@ -1,39 +1,52 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import Layout from "../components/Layout";
+import React, { useState } from "react";
 
 const Blogs = () => {
-  const [blogs, setBlogs] = useState([]);
+  const [search, setSearch] = useState("");
+  const [filter, setFilter] = useState("all");
 
-  useEffect(() => {
-    const fetchBlogs = async () => {
-      try {
-        const response = await axios.get("http://localhost:5000/get-blogs");
-        setBlogs(response.data);
-      } catch (error) {
-        console.error("Error fetching blogs:", error);
-      }
-    };
+  const blogs = [
+    { id: 1, title: "Understanding React Hooks", content: "Full content for React Hooks", difficulty: "Beginner" },
+    { id: 2, title: "CSS Tricks for Developers", content: "Full content for CSS Tricks", difficulty: "Intermediate" },
+    { id: 3, title: "JavaScript ES6 Features", content: "Full content for ES6 Features", difficulty: "Advanced" },
+    { id: 4, title: "Node.js Basics", content: "Full content for Node.js Basics", difficulty: "Beginner" },
+    { id: 5, title: "Understanding Databases", content: "Full content for Databases", difficulty: "Intermediate" },
+  ];
 
-    fetchBlogs();
-  }, []);
+  const filteredBlogs = blogs.filter(
+    (blog) =>
+      blog.title.toLowerCase().includes(search.toLowerCase()) &&
+      (filter === "all" || blog.difficulty === filter)
+  );
 
   return (
-    <Layout>
-      <h1>All Blogs</h1>
-      {blogs.length > 0 ? (
-        <ul style={{ textAlign: "left", listStyle: "none", padding: 0 }}>
-          {blogs.map((blog) => (
-            <li key={blog.id} style={{ marginBottom: "20px", borderBottom: "1px solid #ccc", paddingBottom: "10px" }}>
-              <h3>{blog.title}</h3>
-              <p>{blog.content}</p>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>No blogs available yet.</p>
-      )}
-    </Layout>
+    <div className="blogs-container">
+      <h1>Blogs</h1>
+      <div className="search-container">
+        <input
+          type="text"
+          placeholder="Search blogs..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <select value={filter} onChange={(e) => setFilter(e.target.value)}>
+          <option value="all">All</option>
+          <option value="Beginner">Beginner</option>
+          <option value="Intermediate">Intermediate</option>
+          <option value="Advanced">Advanced</option>
+        </select>
+      </div>
+      <div className="blog-list">
+        {filteredBlogs.map((blog) => (
+          <div className="blog-card animated" key={blog.id}>
+            <h2>{blog.title}</h2>
+            <p>{blog.content.substring(0, 100)}...</p>
+            <a href={`/blogs/${blog.id}`} className="read-more">
+              Read More
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 
