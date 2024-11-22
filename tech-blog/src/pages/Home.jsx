@@ -17,25 +17,25 @@ function HomePage() {
 
       {/* Features Section */}
       <section className="features">
-        <h2 className="section-title">Why Choose TechBlogs?</h2>
-        <div className="features-grid">
-          <div className="feature-card">
-            <img src="/assets/fast.svg" alt="Fast" />
-            <h3>Lightning-Fast Search</h3>
-            <p>Find the exact blog you need with blazing-fast search capabilities.</p>
-          </div>
-          <div className="feature-card">
-            <img src="/assets/customize.svg" alt="Customization" />
-            <h3>Customizable Categories</h3>
-            <p>Personalize your feed with tags and categories tailored to your interests.</p>
-          </div>
-          <div className="feature-card">
-            <img src="/assets/community.svg" alt="Community" />
-            <h3>Community-Driven</h3>
-            <p>Engage with a tech-savvy community and share your insights.</p>
-          </div>
-        </div>
-      </section>
+  <h2 className="section-title">Why Choose TechBlogs?</h2>
+  <div className="features-grid">
+    <div className="feature-card">
+      <img src="./assets/community.jpg" alt="Feature Image" />
+      <h3>Lightning-Fast Search</h3>
+      <p>Find the exact blog you need with blazing-fast search capabilities.</p>
+    </div>
+    <div className="feature-card">
+      <img src="./assets/community.jpg" alt="Feature Image" />
+      <h3>Customizable Categories</h3>
+      <p>Personalize your feed with tags and categories tailored to your interests.</p>
+    </div>
+    <div className="feature-card">
+      <img src="./assets/community.jpg" alt="Feature Image" />
+      <h3>Community-Driven</h3>
+      <p>Engage with a tech-savvy community and share your insights.</p>
+    </div>
+  </div>
+</section>
 
       {/* Testimonials Section */}
       <section className="testimonials">

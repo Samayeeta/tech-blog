@@ -107,24 +107,48 @@ body {
   }
   
   .feature-card {
-    background-color: #ffffff;
+    background-color: #ffffff; /* Fallback color */
+    background-image: url("/assets/community.jpg");
+    background-size: cover; /* Ensures the image covers the entire card */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling of the image */
     padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px; /* Adds rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Adds a modern shadow effect */
     text-align: center;
     max-width: 300px;
+    color: white; /* Ensures text is readable */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
   }
+  
+  .feature-card h3 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow for better readability */
+  }
+  
+  .feature-card p {
+    font-size: 1rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Subtle text shadow */
+  }
+  
+  .feature-card:hover {
+    transform: scale(1.05); /* Slightly enlarges on hover */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+    cursor: pointer;
+  }
+  
   
   .feature-card img {
     width: 50px;
     margin-bottom: 1rem;
   }
   
-  .feature-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-  
+
   /* Testimonials Section */
   .testimonials {
     padding: 4rem 1rem;
