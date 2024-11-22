@@ -52,6 +52,24 @@ function HomePage() {
         </div>
       </section>
 
+
+      <section className="about-techblogs">
+  <h2 className="section-title1">About TechBlogs</h2>
+  <div className="about-content">
+    <p>
+      Welcome to <strong>TechBlogs</strong> — your ultimate destination for insightful articles, tutorials, and the latest trends in technology. 
+      Our mission is to empower tech enthusiasts with quality content that inspires innovation and enhances learning.
+    </p>
+    <ul className="about-highlights">
+      <li><strong>Expert Writers:</strong> Blogs crafted by industry professionals and tech enthusiasts.</li>
+      <li><strong>Diverse Topics:</strong> From AI to web development, find content tailored to your interests.</li>
+      <li><strong>Engaging Community:</strong> Share your ideas, ask questions, and grow together.</li>
+    </ul>
+    <p>Join us and be a part of a growing tech-savvy community!</p>
+  </div>
+</section>
+
+
       {/* Footer */}
       <footer className="footer">
         <p>&copy; 2024 TechBlogs. All rights reserved.</p>

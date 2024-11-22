@@ -253,3 +253,61 @@ p {
   animation: slideUp 1.5s ease-out;
   color: #ddd;
 }
+
+.about-techblogs {
+  padding: 5rem 2rem; /* Increased padding for a spacious layout */
+  background: linear-gradient(135deg, #1d2549, #2a3060); /* Subtle gradient for a modern look */
+  color: white;
+  text-align: center;
+}
+
+.section-title1 {
+  font-size: 2.5rem; /* Larger font for better emphasis */
+  margin-bottom: 2rem; /* More spacing below the title */
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.about-content {
+  max-width: 900px; /* Slightly wider for better readability */
+  margin: 0 auto;
+  font-size: 1.3rem;
+  line-height: 2; /* Enhanced line spacing */
+}
+
+.about-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0; /* Increased spacing around the list */
+  text-align: left;
+}
+
+.about-highlights li {
+  margin: 1rem 0; /* More spacing between list items */
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem; /* Slightly larger text for better visibility */
+}
+
+.about-highlights li::before {
+  content: "✔";
+  color: #00e676; /* Vibrant green for better visibility */
+  margin-right: 1rem; /* Increased spacing from the text */
+  font-size: 1.5rem; /* Larger checkmark for emphasis */
+}
+
+.about-content p {
+  margin-bottom: 2rem; /* More spacing between paragraphs */
+  font-weight: 300; /* Light font for a sleek look */
+}
+
+.about-techblogs p strong {
+  color: #00bcd4; /* Highlight important text with a different color */
+}
+
+.about-techblogs ul {
+  background: rgba(255, 255, 255, 0.1); /* Subtle translucent background for highlights */
+  padding: 2rem;
+  border-radius: 10px; /* Rounded corners for a polished look */
+}
